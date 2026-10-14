@@ -15,15 +15,11 @@ label is not graded.
 
 **Pull request**
 
-[Link to the pull request you opened. It must be the pull request's own page on the Path
-Review repo, not your fork's branch page.]
+https://github.com/codepath/pathreview-ai301-fa26-s3/pull/207
 
 **Branch**
 
-[The name of the branch the pull request comes from, exactly as it appears in your fork.
-The naming shape is a type prefix, then the issue number, then a short description. **The
-issue number in the branch name must be the number of the issue the pull request fixes** —
-a name carrying any other number does not satisfy this field.]
+fix/69-json-array-fallback
 
 ## Eval iterations
 
@@ -32,28 +28,22 @@ fields.
 
 **Run history**
 
-[The agreement score of each run you did, in order. A single run is a complete answer if
-only one run occurred. **The last score in your list must match the agreement line in the
-`eval-run.txt` you committed** — that file is the record of your final run.]
+1. agreement: 17/20 scored items  (bar: 18/20: below the bar)
+2. agreement: 20/20 scored items  (bar: 18/20: PASS)
 
 **Package analysis**
 
-[Pick one scored package (`pkg-01` through `pkg-20` — the four `calib-` packages are never
-scored). Name it by id, say what your rubric decided and what the gold label said, and
-explain why your rubric read it that way.]
+pkg-11 (gold: accept). My first run rejected it on description-matches-diff because the description says “One function touched,” but the diff also adds a small helper. My rubric read that claim literally. The helper only serves that one function, so the claim isn’t misleading. After I loosened the check, the final run accepted it.
 
 **Check rationale**
 
-[Quote one check from the `rubric.md` you uploaded to `tools/pr-precheck/`, exactly as it reads now.
-Then say why it reads that way — what you revised to get there, or what you rejected in
-favour of it.]
+description-matches-diff: “passes unless a claim would mislead a reviewer about what the change does, what it touches, or how it was tested; fails if a claim is contradicted by the Diff or Test evidence, or names something the package should show and doesn’t (for example “only touches X” when the Diff touches Y, “adds a regression test” with no test in the Diff, “implements the plan exactly” when the Diff leaves out a plan step). Loose summaries are not mismatches: “one function touched” when the Diff also adds a helper that function calls, or a slightly off count of test cases, still passes. Confirmations of routine checks (“code formatted”, “clippy clean”, “go generate produces no diff”) are taken at face value unless the Diff or Test evidence contradicts them. Confident wording is fine when the evidence supports it”
+
+My first version required every claim to be backed by the diff, which wrongly rejected pkg-08 and pkg-11. I kept contradicted claims failing because that’s where silent drift hides.
 
 **Trade-offs**
 
-[Every check gives something up. Any one of these is a complete answer: a package whose
-result it changes, a canary you re-ran with `--only`, a case you accept it will miss, or a
-stated reason nothing changed elsewhere. "Nothing changed, and here is how I know" earns
-the point in full when the reason follows.]
+A false “code formatted” confirmation can now slip through if nothing contradicts it. Nothing else changed: in the final run, every reject package was still rejected (not-tested 4/4, silent-drift 4/4, standards-wall 2/2, unreviewable 3/3).
 
 ---
 
