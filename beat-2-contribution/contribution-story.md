@@ -55,10 +55,9 @@ happened; these entries are the toolkit's own timeline.
 All four entries are graded. Keep every heading below, and fill each
 one in the week it belongs to.
 
-**Unit 5: [one line on the tool work]**
+**Unit 5: Built issue-scout, a skill that searches GitHub from my fit profile, ranks the results, and grades the top five against my rubric
 
-[2-4 sentences: what you built (the scout, your strategy), what broke
-or fell short, what changed because of it.]
+I upgraded my Unit 1 issue-select skill into issue-scout by turning my fit profile into gh search queries and ranking rules, then tested it with five scans. The scans exposed real gaps: my rubric passed repos that ban AI-written code, refuse outside PRs, or have almost no users, and my ranking kept surfacing hours-old issues in toy repos instead of my priority projects. I added repo-in-use and accepts-outside-prs checks, tightened unclaimed and newcomer-scope to catch upstream bugs, missing hardware, and maintainers fixing issues themselves, and reordered the ranking so my priority repos come first. By the fifth scan, every candidate came from an active project and every rejection was correct.
 
 **Unit 6: [one line on the tool work]**
 
