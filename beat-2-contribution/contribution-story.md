@@ -82,7 +82,7 @@ I searched with my issue-scout skill, which turns my fit profile (C++ and Go fir
 
 Honest read of the scout: the rubric held up. It caught everything I built it to catch, and every rejection I checked was correct. The ranking is the weak part. Ranking my priority repos first keeps filling the top five with unlabelled issues from those repos, so my latest scan graded five issues and none were usable. It also assumed my operating system until I added it to my profile. Next I'd add a drop rule for upstream, invalid, wontfix, duplicate, and ai-started labels, and require a good first issue or help wanted label on the priority-repo queries.
 
-Claim comment: claim pending, 2026-11-11
+Claim comment: https://github.com/AcademySoftwareFoundation/OpenImageIO/issues/4613#issuecomment-6788821588
 
 **Toolkit**
 
