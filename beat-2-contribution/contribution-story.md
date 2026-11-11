@@ -8,10 +8,15 @@ format criteria grade exactly that. Your course repo link is the whole submissio
 files and no evidence uploads are part of Assignment 5.
 
 **Contribution Number:** [1]
+
 **Student:** Stephanie Wyatt
+
 **GitHub Username:** stevwya77
+
 **Issue:** https://github.com/AcademySoftwareFoundation/OpenImageIO/issues/4613
+
 **Pull Request:** [GitHub PR link, once opened]
+
 
 One repository, built across units 5 to 8, telling the whole story of your real
 contribution. Fill it as you work, not at the end — the sections below ask for evidence that
