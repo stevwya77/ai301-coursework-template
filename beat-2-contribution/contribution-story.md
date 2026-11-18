@@ -1,4 +1,3 @@
-Contribution story · MD
 # Contribution: bug: Python ImageBuf.get_pixels(oiio.UNKNOWN) returns None silently or segfaults
  
 <!-- Original issue: #4613, "Frame on Frame RAM Increase Using PyBindings for 3.1.0 Converting EXR To Uncompressed PNG".
