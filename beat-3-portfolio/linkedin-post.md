@@ -1,7 +1,7 @@
-I recently investigated and reproduced a memory leak in OpenImageIO issue #4613 where writing PNG files caused uncontrolled RAM growth. By building a subprocess-isolated benchmarking harness tracking physical memory footprints across multiple versions, I isolated the issue to a precise 5 bytes per pixel value per frame and traced its disappearance to release 3.0.6.0.
+I reproduced and investigated OpenImageIO issue #4613, where PNG writes caused uncontrolled RAM growth. Across Windows, Linux, and macOS, I tested releases 3.0.3.1, 3.0.5.0, 3.0.6.0, and 3.2.2.0 using a subprocess-isolated benchmarking harness that separated process RSS from macOS physical footprint.
 
-Although the maintainers had already addressed the underlying handle reference leak upstream in commit #4685, my reproduction empirically verified the fix, reconciled memory measurement discrepancies between RSS and macOS physical footprints, and even uncovered a secondary segmentation fault edge case during type probing. This investigation highlighted the importance of rigorous isolation testing and empirical validation in open-source systems.
+The leak was present through 3.0.5.0 and absent from 3.0.6.0 onward. My reproduction also found a separate reproducible bug: an in-memory call could return None while a file-backed lazy read segfaulted in 10 of 10 fresh-process runs. I documented that as OpenImageIO #5698, and maintainer lgritz confirmed #4613 was fixed by #4685.
 
-https://github.com/AcademySoftwareFoundation/OpenImageIO/issues/4613#issuecomment-6788821588
+https://github.com/AcademySoftwareFoundation/OpenImageIO/issues/4613#issuecomment-6974270940
 
 #OpenSource #Python #SoftwareEngineering #Debugging #OpenImageIO
