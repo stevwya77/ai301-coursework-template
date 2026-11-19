@@ -131,6 +131,7 @@ Deleted: That pattern suggests an out-of-bounds access rather than a clean "unsu
 ## The Arc
  
 **Beat 1**
+
 Date: 2026-09-22
 Friction: issue-select's first eval scored 15/20, below the 18/20 bar.
 Change: I revised the rubric, including an unclaimed check that tells real human claims from bots and abandoned ones.
@@ -147,6 +148,7 @@ Change: I loosened the description-matches-diff check so it only fails a descrip
 Result: It scored 20/20, and I used it before opening Path Review PR #207.
  
 **Beat 2**
+
 Date: 2026-10-30 to 2026-11-11
 Friction: Real scans with issue-scout passed repos that ban AI code, refuse outside pull requests, or barely have users.
 Change: I added the repo-in-use and accepts-outside-prs checks and tightened unclaimed and newcomer-scope.
